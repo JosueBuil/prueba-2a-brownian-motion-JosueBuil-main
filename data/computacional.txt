@@ -1,0 +1,9 @@
+x_start 676386.468
+y_start 4613721.860
+x_ciencias 674938.729
+y_ciencias 4612154.739
+x_destination 674994.990
+y_destination 4612304.351
+destination_radius 20
+step_size 10
+max_power_up 2

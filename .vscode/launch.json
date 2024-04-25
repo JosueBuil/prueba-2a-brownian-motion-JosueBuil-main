@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "Run the test program",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/public_tests.exe",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compile tests"
+        },
+        {
+            "name": "Run the metropolis simulation",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/metropolis.exe",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "Compile metropolis simulation"
+        },
+        {
+          "name": "Run the powerup simulation",
+          "type": "cppvsdbg",
+          "request": "launch",
+          "program": "${workspaceFolder}/powerup.exe",
+          "stopAtEntry": false,
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "console": "integratedTerminal",
+          "preLaunchTask": "Compile powerup simulation"
+      },
+    ],
+    "version": "2.0.0"
+}

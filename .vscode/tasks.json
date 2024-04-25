@@ -1,0 +1,88 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Compile tests",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-Wall",
+                "-O0",
+                "-DMETROPOLIS",
+                "-DTESTING",
+                "tests/public_tests.c",
+                "food.c",
+                "geometry.c",
+                "input_output.c",
+                "movement.c",
+                "parisi.c",
+                "-o",
+                "tests/public_tests.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles the program using public_tests.c as main" 
+        },
+        {
+            "type": "shell",
+            "label": "Compile metropolis simulation",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-Wall",
+                "-O3",
+                "-DMETROPOLIS",
+                "food.c",
+                "geometry.c",
+                "input_output.c",
+                "movement.c",
+                "parisi.c",
+                "main.c",
+                "-o",
+                "metropolis.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles all the *.c files in the working directory with the METROPOLIS flag"
+        },
+        {
+            "type": "shell",
+            "label": "Compile powerup simulation",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-Wall",
+                "-O3",
+                "-DMETROPOLIS",
+                "-DPOWERUP",
+                "food.c",
+                "geometry.c",
+                "input_output.c",
+                "movement.c",
+                "parisi.c",
+                "main.c",
+                "-o",
+                "powerup.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles all the *.c files in the working directory with the METROPOLIS and MAXPOWER flags"
+        },
+    ],
+    "version": "2.0.0"
+}

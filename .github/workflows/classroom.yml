@@ -1,0 +1,32 @@
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Public tests
+      id: public-tests
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Public tests
+        setup-command: gcc -DMETROPOLIS -DTESTING food.c geometry.c input_output.c
+          movement.c parisi.c tests/public_tests.c -lm -o tests/public_tests.o
+        command: "./tests/public_tests.o"
+        timeout: 30
+        max-score: 2
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        PUBLIC-TESTS_RESULTS: "${{steps.public-tests.outputs.result}}"
+      with:
+        runners: public-tests
