@@ -115,13 +115,13 @@ void loadParameters(char *filename, Parameters *p) {
     }
     fclose(f);
 }
-
+  
 /**
  * If METROPOLIS is defined, stores all the steps taken by the particle
  * in the file "results/metropolis.txt". Otherwise, stores them in
  * "results/brownian.txt". In both cases, the file will end up with n_steps
  * lines, each of them with two columns representing the x and y coordinates
- * of the step.
+ * of the step. 
 */
 void writeSteps(Point *steps, int n_steps) {
     
